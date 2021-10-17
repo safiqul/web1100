@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo - Hendelse</title>
+</head>
+<body>
+		
+	<h2>Reagere på  hendelser.</h2>
+
+	<h3>Eksempel 1</h3>
+	<p>Når musepekeren føres over knappen blir knappen grønn, når musepekeren tas vekk fra knappen går det tilbake til blå.<br/>Trykker du på knappen kommer en alert-melding.</p>
+	
+	<img src="blueKnapp.jpg" alt="kapp" 
+		onmouseover="this.src='greenKnapp.jpg'" 
+		onmouseout="this.src='blueKnapp.jpg'" 
+		onclick="alert('Fint at du trykte på meg');">
+
+	<h3>Eksempel 2</h3>
+	<p>Bruk alert metoden på lenke.</p>
+	<p><a href="#" onclick="alert('Be careful')"> Visit me</a></p>
+
+	<h3>Eksempel 3</h3>
+	<p>Bruk prompt metoden, ta vare på verdien og kall en funksjon.</p>
+		<input type="button" value="Hvor gammel er du?" onclick="sjekkAlder();">
+		
+
+<script type="text/javascript">
+
+function sjekkAlder(){
+ 
+  var alder = prompt('Gi inn et siffer for alder:');
+  if (alder < 18) 
+  	alert('Du er for ung, og kan ikke bli med videre.');
+   
+  else
+    alert('Du kan bli med videre, for med ' + alder + ' år er du gammel nok.');
+}
+
+</script>
+</body>
+</html>

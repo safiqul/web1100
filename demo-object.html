@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo objeckt</title>
+</head>
+<body>
+
+<h2>Objekter</h2>
+	<p><i>Objekter kan du lage selv. Du kan gi de egenskaper (properties) med tilhørende verdier.<br/>Du kan også legge metoder/funksjoner til objekter på linje med metoden length, som kan brukes på array. </i></p>
+
+	<h3>Eksempel 1:</h3>
+	<p> Her er objektet car laget, med noen få properties, også en metode.<br/> Etterpå har jeg lagt til en ny property (drivstoff).<br/> Tilslutt har jeg opprettet en ny funksjon som heter beskrivelse (legg merke til notasjon for å angi verdiene).</p>
+
+	<p><i>Utskrift fra scriptet</i><p>
+	
+
+<script type="text/javascript">
+
+
+	var car = {type:'VW',
+				model:'ID.3',
+				color:'hvit',
+				doors: 4,
+				colorDoors : function() {
+				 	return 'Farge og antall dører: ' + this.color + ' og ' + this.doors;
+				 }
+			  };
+	
+	document.write(car.colorDoors());
+
+	// Legg til en ny property
+	car.drivstoff = 'strøm';
+	document.write("</br>Denne bilen går på " + car.drivstoff);
+
+	// Legge til en property som blir en metode til objektet:
+
+	car.description = function () {
+		return car.type + ' modell ' + car.model + ' i ' + car.color;
+	};
+	document.write("</br>Denne bilens beskrivelse: " + car.description());
+
+</script>
+</body>
+</html>

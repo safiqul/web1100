@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Funksjoner</title>
+</head>
+<body>
+
+<h2>Funksjoner</h2>
+	<p>Litt mer om funksjoner. </p> 
+	<ol>
+		<li>Vi ser at det kan være fra 0 til flere argumenter</li>
+		<li>Ha en returverdi</li>
+		<li>Parameteren som brukes i argumentet endres ikke. Variablene inne i funksjonene er lokale.</li>
+	</ol>
+
+<script type="text/javascript">
+
+ 	var p1=3;
+ 	var p2=5;
+ 	var produkt;
+
+ 	document.write("<h3>Funksjoner kan ha returverdi</h3>");
+ 	document.write("<p><i>Her kalles myFunction(p1,p2) som har returverdi.</i></p>");
+ 	produkt = myFunction(p1,p2);
+ 	document.write("Produktet av " + p1 + " og " + p2 + " = " + produkt);
+ 	document.write("<br/>");
+
+    /* 
+ 	document.write("<h3>Verdiene i funksjoner er lokale</h3>");
+ 	document.write("<p><i>Her kalles visLokal(p1)</i></p>");
+ 	varLokal(p1);
+ 	document.write("<br/>Ute av funskjonen har p1 sin opprinnelige verdi: " + p1);
+    */
+    
+    
+    /*
+ 	document.write("<h3>Funksjoner trenger ikke å ha argument</h3>");
+ 	document.write("<p><i>Her kalles visBilde()</i></p>");
+ 	visBilde();
+	*/
+
+
+  	function myFunction (p1, p2){
+  		return p1 * p2;}
+
+  	function varLokal (p1){
+  		document.write("Overført til funksjonen har p1 verdien " + p1);
+  		p1=222;
+		document.write("<br/>I funskjonen endres p1 til " + p1);
+  	}
+
+  	function visBilde(){
+  		document.write("<img src='epler_9cmb_12cmh.jpg' alt='epler'>");
+  	}
+
+   	   
+</script>
+</body>
+</html>
