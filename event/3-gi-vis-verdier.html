@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gi og vis verdier</title>
+	<style type="text/css">
+		body {
+			margin: 30px;
+		}
+		label {display: block;
+				}
+		input {margin: 2px;}		
+	</style>
+	
+</head>
+<body>
+	<h1>Gi og hent verdier</h1>
+	<h3>Her kan du gi inn prisen på en vare og få beregnet pris med mva, og du blir spurt om mva-sats.</h3>
+	<form id="mvaForm">
+		
+		<label>Gi inn pris:</label> <input type="number" name="pris" value="100">
+		<label>Angi prosensats for mva:</label> <input type="number" name="mva" value="25">
+		<div> <input type="button" value="Vis pris med mva" onclick="visPrisMmva();"></div>
+		<!-- Vi skal med JavaScript legge til følgende: <label>Pris m mva:</label> <input type="number" id="prisMva"> -->
+	</form>
+<p id="prisMMva"></p>
+
+<script type="text/javascript">
+
+function visPrisMmva(){
+
+  /* Det er objekter med navn pris som hentes i en array når vi bruker getElement.... For pris er det bare en så vi kan aksessere den første i tabellen som alltid har indeks lik 0 */	
+  var prisUmva = document.getElementsByName("pris")[0].value;
+  var mvaPros = document.getElementsByName("mva")[0].value;
+
+  /* Vi må caste til et tall for å kunne regne med det, ellers slår den sammen to tekststrenger, - og det er stor forskjell på "100" + "25" som blir 10025, og 100*25 */
+  prisUmva = Number(prisUmva);
+  mvaPros = Number(mvaPros);
+  
+  var prisMedMva = prisUmva + ((prisUmva*mvaPros)/100);
+
+   /* Før vi oppretter ny elementer sjekker vi om de allerede finnes, siden jeg vil bruke programmet flere ganger og vil bruke samme felt, og ikke få mange bokser etterhverandre.
+   Vi lager en id, slik at vi kan refere til elementet.
+   Så legger vi verdien i et input-elements value egenskap. 
+   For inndata-elementer legges innholdet inn i value, mens innerHTML brukes for andre slik som label.
+
+     */
+
+  if (!document.getElementById("labMva")) {
+	  var nyLabel = document.createElement("label");
+	  document.getElementById("mvaForm").appendChild(nyLabel);
+	  nyLabel.setAttribute("id", "labMva");
+	  document.getElementById("labMva").innerHTML = "Pris m mva: ";
+  }
+
+  if (!document.getElementById("dataMva")) {		
+	  var nyInnBox = document.createElement("input");
+	  document.getElementById("mvaForm").appendChild(nyInnBox);
+	  nyInnBox.setAttribute("id", "dataMva");
+	  nyInnBox.setAttribute("type", "Number");
+	  nyInnBox.setAttribute("readonly", "readonly");
+  }
+  else {
+  	nyInnBox = document.getElementById("dataMva");
+  }
+
+  nyInnBox.setAttribute("value", prisMedMva);
+  
+  /* I stedet for setAttribute, kunne du bruke setningen under
+  document.getElementById("dataMva").value = prisMedMva;
+	*/
+
+  /* Siste setning demonstrerer hvordan verdier kan legges ut i et annet type element, her i et p-element som vi har laget en id til på forhånd. */
+
+  document.getElementById("prisMMva").innerHTML = "Prisen med mva er: " + prisMedMva;
+
+}
+
+</script>
+	
+</body>
+</html>

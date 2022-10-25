@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM tre</title>
+	<style>
+		table, td, th {border: 1px solid;}
+		table {border-collapse: collapse;}
+	</style>
+</head>
+<body>
+	<table id="musikk">
+			<tr>
+				<td>Shady Grove</td>
+				<td>Aeolian</td>
+			</tr>
+			<tr>
+				<td>Over the river,
+				Charlie</td>
+				<td>Dorian</td>
+			</tr>
+	</table>
+
+	<h2 id="demo"> hello world test</h2>
+	<h1 id="paint"> just an extra header </h2>
+
+
+
+<script type="text/javascript">
+
+document.getElementById("demo").innerHTML = document.getElementById("paint").childNodes[0].nodeValue;
+</script>
+
+</body>
+</html>

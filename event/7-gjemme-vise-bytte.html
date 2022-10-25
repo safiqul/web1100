@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gjemme og vise bytte</title>
+	<style>
+		#hoved {position: relative;
+				margin-top:10px;
+				margin-left:auto;
+				margin-right:auto;
+  				width: 600px;
+				background-color: #fff;
+				border: solid;
+				padding: 5px;
+				}
+		aside { display: inline; }	
+			
+		#vSide {width: 200px;
+				margin-left: 25px;
+				padding: 10px;
+				background-color: #aaa;
+			}	
+		#hSide {width: 200px;
+				margin-left: 250px;
+				padding: 10px;
+				background-color: #afa;
+				float:relative;
+				display: none;
+		}		
+						
+	</style>
+</head>
+<body>
+	<section id="hoved">
+		<header>
+	  		<h1>Gjemme og vise innhold</h1>
+			<p>Når vi klikker på en boks vil en ny dukke opp, og den andre blir gjemt.</p>
+		</header>
+
+		<section>
+	  		<aside id="vSide">Skift bilde.</aside>
+	  		<aside id="hSide">Skift bilde.</aside>
+	  	</section>
+
+	</section>	
+	
+	
+
+	<script type="text/javascript" src="jquery.js" ></script>
+	<script type="text/javascript">
+    
+    $(document).ready(function() {
+    	// $("#hSide").hide(); Vi kunne bruke denne, men da vil den lyse litt opp når siden lastes. 
+		$("#vSide, #hSide").click(function () {
+			$("#vSide, #hSide").toggle();
+		});
+    });
+
+  </script>
+
+
+</body>
+</html>

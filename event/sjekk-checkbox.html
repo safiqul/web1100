@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Løkke checkbox verdi</title>
+	<style type="text/css">
+		label {
+			display: block;
+		}
+	</style>
+<body>
+
+<h3>A demonstration of how to access flere Checkboxer</h3>
+
+<fieldset><legend>Første sett med checkbokser</legend>
+<label>Checkbox1: <input type="checkbox" id="myCheck1"></label>
+<label>Checkbox2: <input type="checkbox" id="myCheck2"></label>
+<label>Checkbox3: <input type="checkbox" id="myCheck3"></label>
+<label>Checkbox4: <input type="checkbox" id="myCheck4"></label>
+</fieldset>
+
+<fieldset><legend>Andre sett med checkbokser</legend>
+<label>Checkbox1: <input type="checkbox"  class="my2Ch"></label>
+<label>Checkbox2: <input type="checkbox"  class="my2Ch"></label>
+<label>Checkbox3: <input type="checkbox"  class="my2Ch"></label>
+<label>Checkbox4: <input type="checkbox" class="my2Ch"></label>
+</fieldset>
+
+<fieldset><legend>Tredje sett med checkbokser</legend>
+<label>Checkbox1: <input type="checkbox"  class="my3Ch"></label>
+<label>Checkbox2: <input type="checkbox"  class="my3Ch"></label>
+<label>Checkbox3: <input type="checkbox"  class="my3Ch"></label>
+<label>Checkbox4: <input type="checkbox" class="my3Ch"></label>
+</fieldset>
+
+<p>Klikk de ulike knappene. Alle oppnår samme resultat, men med ulik programmeringskode.</p>
+
+<button onclick="myFunction()">Sett checked, først sett</button>
+<button id="b2" onclick="my2Function()">Sett checked, andre sett</button>
+<button id="b3">Sett checked, tredje sett</button>
+
+<script type="text/javascript" src="jquery.js" ></script>
+<script>
+function myFunction() {
+	/* Ulemper? Hva mener dere?*/
+  for (i=1;i<=4;i++) {
+  	var x = document.getElementById("myCheck" + i);
+  	x.checked = true;
+  }  
+}
+
+function my2Function() {
+	/* Ulemper? Hva mener dere?*/
+	var chArray = document.getElementsByClassName("my2Ch");
+	var i = 0;
+  	while (i< chArray.length) {
+  		chArray[i].checked = true;
+  		i++;
+  	}  
+}
+
+$(document).ready(function() {
+		$("#b3").click(function () {
+			$('.my3Ch').prop("checked", true);
+		});
+		
+    });
+</script>
+
+</body>
+</html>

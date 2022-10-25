@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+	<title>Eks. addEventListener</title>
+</head>
+<body>
+
+<h2>Eksempel på å knytte addEventListener() metoden til klikk på h2-elementer (denne teksten er h2).</h2>
+
+<p>Når du klikker på et h2-element skrives det ut en tekst på et bestemt sted på html-dokumentet, (denne teksten er i en p).</p>
+
+<p id="demo">Opprinnelig tekst.</p>
+
+<script>
+
+
+  var h2Liste = document.getElementsByTagName("h2");
+  
+  for (var i = 0; i < h2Liste.length; i++) {
+
+		h2Liste[i].addEventListener("click", function () {
+
+  			document.getElementById("demo").style.color = "green";
+  			document.getElementById("demo").style.fontSize = "24pt";
+
+  			document.getElementById("demo").innerHTML = 		"Jasså, du klikket på h2!";
+			});
+	}
+
+</script>
+
+</body>
+</html>

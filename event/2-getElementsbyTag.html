@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Eks. getElementes</title>
+</head>
+<body>
+	<ol>Her ser vi i bruk
+		<li>getElementsByTagName</li>
+		<li>getElementsById</li>
+	</ol>
+
+
+<p>An unordered list:</p>
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+
+
+<p>Click the button to find out how many li elements there are in this document.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+	
+function myFunction() {
+  var x = document.getElementsByTagName("li");
+   //document.write("lenge er" + x.length); - tidligere tekst vil bli borte
+  //Her skriver vi i dokumentet og resten bevares
+  document.getElementById("demo").innerHTML = "lengde er: " + x.length;
+}
+</script>
+
+</body>
+</html>

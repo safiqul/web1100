@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gjemme og vise</title>
+	<style>
+		#hoved {position: relative;
+				margin-top:10px;
+				margin-left:auto;
+				margin-right:auto;
+  				width: 600px;
+				background-color: #fff;
+				border: solid;
+				padding: 5px;
+				}
+		aside { display: inline; }	
+			
+		#vSide {width: 200px;
+				margin-left: 25px;
+				padding: 10px;
+				background-color: #aaa;
+			}	
+		#hSide {width: 200px;
+				margin-left: 250px;
+				padding: 10px;
+				background-color: #afa;
+				display: none;
+		}
+		#demo1 {display: none;}		
+						
+	</style>
+</head>
+<body>
+	<section id="hoved">
+		<header>
+	  		<h1>Gjemme og vise innhold</h1>
+			<p>Når vi klikker på boksen vil vi vise en i tillegg. Fargen på teksten til boksen som blir klikket på endres.</p>
+			<p>Hvis du klikker på den nye boksen, vil alle p-elementer forsvinne.</p>
+		</header>
+
+		<section>
+	  		<aside id="vSide">Klikk på meg.</aside>
+	  		<aside id="hSide">Takk for det.</aside>
+	  	</section>
+	  	
+	</section>
+	<h4 id="demo1">Her skrives ut fargekoden som ble brukt når fargen på teksten i den først boksen endret seg.</h4>
+	<div id="demo2"></div>
+	
+
+	<script type="text/javascript" src="jquery.js" ></script>
+	<script type="text/javascript">
+    
+    $(document).ready(function() {
+    	//Starter med å gjemme boks til høyre side
+    	//$("#hSide").hide();
+
+    	/*Viser boks til høyre og endrer farge på knappen som blir trykket på, det elementet som har eventen kan refereses til som this.*/
+
+		$("#vSide").click(function () {
+			$("#hSide").show();
+
+			$(this).css("color", "pink"); //this referer til vSide-elementet siden det var det vi klikket på, og vi gir verdi
+			
+			var farge = $(this).css("color"); //her henter vi verdien
+			$("#demo1").css("color", farge);
+			$("#demo1").show();
+			document.getElementById("demo2").innerHTML = "Fargekoden er " + farge;
+		});
+
+		//Gjemmer alle p-elementer ved click-event
+		$("#hSide").click(function () {
+			$("p").hide();
+		});
+
+    });
+
+  </script>
+
+
+</body>
+</html>

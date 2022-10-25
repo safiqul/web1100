@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gjemme og vise skifte</title>
+	<style>
+		#hoved {position: relative;
+				margin-top:10px;
+				margin-left:auto;
+				margin-right:auto;
+  				width: 600px;
+				background-color: #fff;
+				border: solid;
+				padding: 5px;
+				}
+		aside { display: inline; }	
+			
+		#vSide {width: 200px;
+				margin-left: 25px;
+				padding: 10px;
+				background-color: #aaa;
+			}	
+		#hSide {width: 200px;
+				margin-left: 250px;
+				padding: 10px;
+				background-color: #afa;
+				float:relative;
+				display: none;
+		}		
+						
+	</style>
+</head>
+<body>
+	<section id="hoved">
+		<header>
+	  		<h1>Gjemme og vise innhold</h1>
+			<p>Når vi klikker på en farget boks vil en ny dukke opp, så kan du gjemme den igjen.</p>
+		</header>
+
+		<section>
+	  		<aside id="vSide">Vis/gjem bildet.</aside>
+	  		<aside id="hSide">Hei!</aside>
+	  	</section>
+
+	</section>	
+	
+	
+
+	<script type="text/javascript" src="jquery.js" ></script>
+	<script type="text/javascript">
+    
+    $(document).ready(function() {
+    	
+		$("#vSide").click(function () {
+			$("#hSide").toggle();
+		});
+    });
+
+  </script>
+
+</body>
+</html>

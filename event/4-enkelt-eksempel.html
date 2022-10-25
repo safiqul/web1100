@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>enkelt jquery script</title>
+</head>
+<body>
+	<h1>Enkel demo med jQuery</h1>
+	<p>Vi vil at en alertboks skal komme opp hver gang et div-element klikkes på.</p>
+	<div>Dette er en div.<br/></div>
+	<div>Dette er en ny div></div>
+	<h2>Dett er en overskrift</h2>
+	<div>Her er den tredje div. - og sannelig virker onclick på alle divene, men ikke på overskriften.</div>
+	<h4><em>Vi får altså en ryddigere kode i stedet for å knytte hendelsesbehandligen til et element slik vi gjorde sist. Da måtte vi ha skrevet &lt;div onclick="alert('Hei!');"&gt; på alle div.</em><br/>Og for å sette bakgrunnsfargen er det en del JavaScript kode som spares, ref. getElementsByTagName. </h4>
+	
+
+	<script type="text/javascript" src="jquery.js" ></script>
+	<script type="text/javascript">
+    
+    $(document).ready(function() {
+		$("div").click(function () {alert("Hei!");});
+		$("h4").css("background-color", "pink");
+    });
+
+  </script>
+
+
+</body>
+</html>
